@@ -1,20 +1,26 @@
 '''
-Sign your name:________________
+Sign your name:Zachary Blum
  
  1. Write code that defines a class named Animal:
      * Add a constructor for the Animal class that prints 'An animal has been born.'
      * Add an attribute for the animal name.
      * Add an eat() method for Animal that prints 'Munch munch.'
-     * Add a make_noise() method for Animal that prints 'Grrr says [animal name].'
+     * Add a make_noise() method for Animal that prints 'Grrr says [animal name].'''
 
-     
+
+
+'''
  2. Write code that defines a class named Cat:
      * Make Animal the parent.
      * Add a constructor for Cat that prints 'A cat has been born.'
      * Modify the constructor so it calls the parent constructor as well.
      * Add a make_noise() method for Cat that prints 'Meow says [animal name].'
+    '''
 
-     
+
+
+
+''' 
  3. Write code that defines a class named Dog:
      
      * Make Animal the parent.
@@ -46,3 +52,53 @@ Munch munch
 Grrr says (animal name) .
 '''
 
+
+class Animal():
+    def __init__(self, name):
+        self.name = name
+        print("An animal has been born.")
+
+    def eat(self):
+        print("Munch munch.")
+
+    def make_noise(self):
+        print("Grrr says " + self.name)
+
+
+class Cat(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        print("A cat has been born.")
+
+    def eat(self):
+        print("Munch munch.")
+
+    def make_noise(self):
+        print("Grrr says " + self.name)
+
+class Dog(Animal):
+        def __init__(self, name):
+            super().__init__(name)
+            print("A Dog has been born.")
+
+        def make_noise(self):
+            print("Bark says " + self.name)
+
+def myprogram():
+
+    cat = Cat("Felix")
+    cat.eat()
+    cat.make_noise()
+    dog1 = Dog("Rover")
+    dog1.eat()
+    dog1.make_noise()
+    dog2 = Dog("Pooch")
+    dog2.eat()
+    dog2.make_noise()
+    thing = Animal("Leviathan")
+    thing.eat()
+    thing.make_noise()
+
+
+if __name__ == "__main__":
+    myprogram()
